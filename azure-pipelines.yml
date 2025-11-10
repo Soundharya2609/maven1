@@ -4,7 +4,7 @@ trigger:
 pool:
   name: Default
   demands:
-    - agent.os -equals Windows_NT
+    - agent.os -equals myagent
 
 steps:
 - checkout: self
@@ -12,5 +12,6 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'maven/target'
-    ArtifactName: 'maven'
+    ArtifactName: 'maven-build'
     publishLocation: 'Container'
+
