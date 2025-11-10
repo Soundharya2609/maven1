@@ -1,18 +1,16 @@
 trigger:
-  - main
+- main
 
 pool:
   name: Default
   demands:
     - agent.os -equals Windows_NT
 
-
 steps:
 - checkout: self
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: 'target'
-    ArtifactName: 'maven1-artifact'
-    publishLocation: 'Container'
-
+- script: |
+    echo "Pipeline started!"
+    echo "Hello from Windows agent!"
+    echo "Pipeline finished!"
+  displayName: "Print pipeline messages"
