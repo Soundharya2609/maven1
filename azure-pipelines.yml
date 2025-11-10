@@ -12,6 +12,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'maven/target'
+    PathtoPublish: 'target'
+    ArtifactName: 'maven1-artifact'
     publishLocation: 'Container'
 
